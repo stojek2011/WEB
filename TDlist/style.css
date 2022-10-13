@@ -1,0 +1,127 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+:root
+{
+  --accent:#ac4e4e;  
+  --default:rgb(0,0,0,0.5)
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color:var(--accent);
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+}
+.td{
+    padding:32px;
+    background-color: rgb(253, 253, 253);
+    width:95vw;
+    border-radius:16px ;
+    font-size: 18px;
+    font-weight: 300;
+}
+.td_content {
+}
+.td_new {
+    --size:50px;
+    display: flex;
+    margin: 16px 0 32px;
+    
+}
+.td_new input{
+    margin-right: 16px;
+    font-size: 18px;
+    padding: 8px 16px;
+    height: var(--size);
+    border:1px solid var(--default);
+    border-radius: 15px;
+    flex-grow: 1;
+}
+
+.td_add,
+.td_taskdel{
+    cursor: pointer;
+    text-align: center;
+    line-height: calc( var(--size)*0.9);
+    height: var(--size);
+    width: var(--size);
+    font-size: 32px;
+    font-weight: 200;
+   
+    background: var(--accent);
+    border-radius:15px ;
+    color: aliceblue;
+}
+.td_list >*:not(:last-child){
+    margin-bottom: 8px;
+ }
+.td_task {
+    display: flex;
+    cursor: default;
+    align-items: center;
+    --size:30px;
+    min-height:var(--size);
+}
+.td_task:hover .td_taskdel{
+    display: block;
+
+}
+.td_task_complete .td_task_text{
+    text-decoration: line-through;
+    color: rgb(105, 105, 102);
+
+}
+.td_list {
+}
+.td_checkbox {
+    margin-right: 16px;
+}
+
+.td_checkbox div{
+    --size:28px;
+    cursor: pointer;
+    height: var(--size);
+    width: var(--size);
+    border:1px solid var(--accent);
+    border-radius:10px;
+    position:relative ;
+    color: aliceblue;
+}
+.td_checkbox input{
+    display: none;
+}
+.td_checkbox input:checked+div {
+    background-color:var(--accent);
+   
+}
+.td_checkbox input:checked+div::after {
+    display: block;
+    
+ }
+.td_checkbox div::after{
+    content: "\2717";
+    text-align: center;
+    display: none;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom:0;
+}
+.td_task_text {
+    font-size: 20px;
+}
+.td_taskdel {
+    display: none;
+    margin-left:auto;
+    margin-right: 0;
+    font-size: 40px;
+    font-weight: 180;
+    line-height: calc( var(--size)*0.88);
+}
